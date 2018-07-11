@@ -1,8 +1,8 @@
-var ImageCounter = function(props) {
+var ImageCounter = function (props) {
     return (
         <div className="image-counter">
             <div className="count">{props.count}</div>
-            <img src={'img/' + props.imageUrl} onClick={props.onCount} />
+            <img src={'img/' + props.imageUrl} onClick={props.onCount}/>
         </div>
     );
 }
@@ -15,10 +15,10 @@ var Hero = React.createClass({
     },
 
     handleClick: function () {
-        this.setState({ count: this.state.count + 1 });
+        this.setState({ count: this.state.count + 1 })
     },
 
-    render: function() {
+    render: function () {
         return (
             <div className="container">
                 <ImageCounter imageUrl={this.props.imageUrl} count={this.state.count} onCount={this.handleClick} />
@@ -34,37 +34,41 @@ var App = React.createClass({
         return (
             <div>
                 {this.props.heroes.map(function(hero) {
-                    return <Hero key={hero.id} title={hero.title} subtitle={hero.subtitle} imageUrl={hero.imageUrl} />
+                    return <Hero key={hero.id}
+                                 title={hero.title}
+                                 subtitle={hero.subtitle}
+                                 imageUrl={hero.imageUrl} />
                 })}
+
             </div>
-        );
+        )
     }
 });
 
 var data = [
     {
         id: 1,
-        title: 'React',
-        subtitle: 'Библиотека для создания пользовательских интерфейсов',
-        imageUrl: 'react.png'
+        title: "React",
+        subtitle: "Библиотека для создания пользовательских интерфейсов",
+        imageUrl: "react.png"
     },
     {
         id: 2,
-        title: 'Angular 2',
-        subtitle: 'Один фреймворк',
-        imageUrl: 'angular.png'
+        title: "Angular 5",
+        subtitle: "Один фреймворк",
+        imageUrl: "angular.png"
     },
     {
         id: 3,
-        title: 'Ember',
-        subtitle: 'Фреймворк для создания амбициозных веб-приложений',
-        imageUrl: 'ember.png'
+        title: "Ember",
+        subtitle: "Фреймворк для создания амбициознах веб-приложений",
+        imageUrl: "ember.png"
     },
     {
         id: 4,
-        title: 'Vue',
-        subtitle: 'Прогрессивный фреймворк',
-        imageUrl: 'vue.png'
+        title: "Vue",
+        subtitle: "Прогрессивный фреймворк",
+        imageUrl: "vue.png"
     }
 ];
 
